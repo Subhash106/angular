@@ -1,0 +1,23 @@
+<h2>Title: {{ title | async }}</h2>
+
+<button class="btn btn-primary" (click)="oddOnly()">Show Odd Only</button>
+<button class="btn btn-primary" (click)="evenOnly()">Show Even Only</button>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let number of filteredNumbers">
+    {{ number.eng | uppercase }} -
+    {{ number.date | date : "fullDate" | uppercase | shorten : 24 }}
+    <span class="badge badge-primary">{{ number.math }}</span>
+  </li>
+</ul>
+
+<p appBasicHighlight>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deleniti
+  laboriosam eius odit provident in earum nulla. Consectetur mollitia atque, at
+  sint voluptas minus harum earum provident. Numquam, voluptatum debitis.
+</p>
+
+<p appAdvanceHighlight [defaultColor]="'yellow'" [highlightColor]="'green'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deleniti
+  laboriosam eius odit provident in earum nulla. Consectetur mollitia atque, at
+  sint voluptas minus harum earum provident. Numquam, voluptatum debitis.
+</p>
